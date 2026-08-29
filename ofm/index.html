@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lloyd Allen Clavo | OnlyFans Management &amp; Elite Chatting</title>
+  <meta name="description" content="Lloyd Allen Clavo — OnlyFans Management (OFM), elite chatting, sales & retention. Proven revenue across multiple models and agencies." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💬%3C/text%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lloyd Allen Clavo | OnlyFans Management & Elite Chatting" />
+  <meta property="og:description" content="OFM operator — elite chatting, sales & retention across multiple models and agencies. Peak day $3,687." />
+  <meta name="twitter:card" content="summary" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --neon-pink:#ff2d95; --neon-cyan:#00f0ff; --neon-purple:#b14eff; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; background:#000; color:#e5e5e5; overflow-x:hidden; }
+    h1,h2,h3,.serif { font-family:'Playfair Display',serif; }
+    #canvas-container { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:0.7; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline:2px solid var(--neon-cyan); outline-offset:3px; border-radius:6px; }
+    .content { position:relative; z-index:10; }
+    .glass { background:rgba(10,10,15,0.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.08); }
+    .neon-text { background:linear-gradient(90deg,#ff2d95,#00f0ff,#b14eff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .section-title { font-size:clamp(2rem,5vw,3.5rem); letter-spacing:0.05em; text-transform:uppercase; color:#f2f3f7; }
+    .fade-up { opacity:0; transform:translateY(40px); transition:opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+    .nav-link { position:relative; transition:color 0.3s; }
+    .nav-link::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1px; background:linear-gradient(90deg,var(--neon-pink),var(--neon-cyan)); transition:width 0.3s ease; }
+    .nav-link:hover::after { width:100%; }
+    .nav-link.active { color:#fff; } .nav-link.active::after { width:100%; }
+    .card-hover { transition:transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
+    .card-hover:hover { transform:translateY(-8px); border-color:rgba(0,240,255,0.3); box-shadow:0 20px 40px -10px rgba(0,240,255,0.15); }
+    .btn-neon { background:transparent; border:1px solid rgba(255,255,255,0.25); position:relative; overflow:hidden; transition:all 0.4s ease; }
+    .btn-neon::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,var(--neon-pink),var(--neon-cyan)); opacity:0; transition:opacity 0.4s ease; z-index:-1; }
+    .btn-neon:hover { border-color:transparent; color:#000; } .btn-neon:hover::before { opacity:1; }
+    .pill { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:all 0.3s ease; }
+    .pill:hover { background:rgba(0,240,255,0.1); border-color:var(--neon-cyan); }
+    .pill-hot { border-color:rgba(255,45,149,0.45); color:#ff9ecb; }
+    .menu-toggle { display:none; }
+    .hero-title { line-height:1.1; }
+    .mobile-break { display:inline; }
+    @media (max-width:1023px) { .menu-toggle { display:inline-flex !important; align-items:center; justify-content:center; min-width:44px; min-height:44px; color:#fff; } }
+    @media (max-width:480px) { .hero-title { font-size:clamp(1.9rem,9vw,2.35rem); letter-spacing:0.02em; } .mobile-break { display:block; } }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#0a0a0a; }
+    ::-webkit-scrollbar-thumb { background:linear-gradient(var(--neon-pink),var(--neon-cyan)); border-radius:3px; }
+    @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto;} .fade-up{opacity:1!important;transform:none!important;transition:none!important;} .animate-bounce{animation:none!important;} }
+    #mobileMenu a { padding:0.5rem 0; }
+  </style>
+  <noscript><style>.fade-up{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+  <div id="canvas-container"></div>
+  <div class="content">
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#home" class="serif text-xl tracking-wide neon-text whitespace-nowrap">Lloyd Allen</a>
+        <div class="hidden lg:flex items-center gap-7 text-sm tracking-wide">
+          <a href="#about" class="nav-link hover:text-white">About</a>
+          <a href="#services" class="nav-link hover:text-white">What I Do</a>
+          <a href="#results" class="nav-link hover:text-white">Results</a>
+          <a href="#process" class="nav-link hover:text-white">Process</a>
+          <a href="#platforms" class="nav-link hover:text-white">Platforms</a>
+          <a href="#experience" class="nav-link hover:text-white">Experience</a>
+          <a href="#contact" class="nav-link hover:text-white">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="mailto:gotmilk766@gmail.com" class="hidden sm:inline-block btn-neon px-5 py-2 rounded-full text-sm tracking-wider">Hire Me</a>
+          <button id="menuBtn" type="button" class="menu-toggle lg:hidden p-2 -mr-2 text-white/80 hover:text-white transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span id="menuIcon" aria-hidden="true" style="font-size:1.65rem;line-height:1;">☰</span>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="lg:hidden hidden glass border-t border-white/5">
+        <div class="px-6 py-4 flex flex-col text-sm tracking-wide">
+          <a href="#about" class="nav-link hover:text-white">About</a>
+          <a href="#services" class="nav-link hover:text-white">What I Do</a>
+          <a href="#results" class="nav-link hover:text-white">Results</a>
+          <a href="#process" class="nav-link hover:text-white">Process</a>
+          <a href="#platforms" class="nav-link hover:text-white">Platforms</a>
+          <a href="#experience" class="nav-link hover:text-white">Experience</a>
+          <a href="#contact" class="nav-link hover:text-white">Contact</a>
+          <a href="mailto:gotmilk766@gmail.com" class="btn-neon mt-3 px-5 py-2 rounded-full text-sm tracking-wider text-center">Hire Me</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="fade-up mb-6">
+          <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white/75 border border-white/15 rounded-full px-4 py-1.5">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>Open to OFM roles
+          </span>
+        </div>
+        <p class="text-sm tracking-[0.35em] uppercase text-cyan-300 mb-6 fade-up">Elite Chatting · Sales &amp; Retention · Model Management</p>
+        <h1 class="section-title neon-text hero-title mb-4 fade-up" style="transition-delay:0.1s">OnlyFans <span class="mobile-break">Management</span><br>&amp; Elite Chatting</h1>
+        <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-9 fade-up" style="transition-delay:0.2s">
+          I'm Lloyd — an OFM operator who turns conversations into revenue. Elite chatting, sales-driven funnels, retention systems, and model management across multiple agencies and platforms.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up" style="transition-delay:0.3s">
+          <a href="#results" class="btn-neon px-8 py-3 rounded-full text-sm tracking-widest uppercase">See the Results →</a>
+          <a href="mailto:gotmilk766@gmail.com" class="px-8 py-3 rounded-full text-sm tracking-widest uppercase border border-white/25 hover:border-cyan-400/60 transition">Get in Touch</a>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-up">
+            <p class="text-cyan-300 tracking-widest text-sm uppercase mb-3">About</p>
+            <h2 class="section-title mb-6">The chatter behind the revenue.</h2>
+            <div class="space-y-5 text-white/85 leading-relaxed">
+              <p>I specialize in <span class="text-white">OnlyFans management and elite chatting</span> — building genuine rapport with subscribers, promoting premium content, and converting conversations into consistent sales. I've chatted and managed for multiple models across several agencies.</p>
+              <p>Beyond the chat, I run the systems that keep revenue growing: traffic follow-ups, retention, upsells, mass-message strategy, content scheduling, and nightly performance reflection. I treat every model's account like a business.</p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <span class="pill px-4 py-1.5 rounded-full text-xs tracking-wide">Sales-Driven Chat</span>
+              <span class="pill px-4 py-1.5 rounded-full text-xs tracking-wide">Retention &amp; Upsells</span>
+              <span class="pill px-4 py-1.5 rounded-full text-xs tracking-wide">Model Management</span>
+              <span class="pill px-4 py-1.5 rounded-full text-xs tracking-wide">Discretion &amp; Compliance</span>
+            </div>
+          </div>
+          <div class="fade-up" style="transition-delay:0.15s">
+            <div class="glass rounded-2xl p-8 card-hover">
+              <h3 class="serif text-2xl mb-6 neon-text">What you get.</h3>
+              <p class="text-white/80 leading-relaxed mb-6">A reliable, sales-minded chatter who protects your models' brand, keeps subscribers engaged, and pushes revenue every shift — with clean end-of-day reporting you can actually trust.</p>
+              <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
+                <div><div class="text-2xl md:text-3xl font-light neon-text">10+</div><div class="text-xs text-white/60 mt-1 tracking-wide">Models Managed</div></div>
+                <div><div class="text-2xl md:text-3xl font-light neon-text">5</div><div class="text-xs text-white/60 mt-1 tracking-wide">Agencies</div></div>
+                <div><div class="text-2xl md:text-3xl font-light neon-text">~2 yrs</div><div class="text-xs text-white/60 mt-1 tracking-wide">OF Chatting</div></div>
+                <div><div class="text-2xl md:text-3xl font-light neon-text">24/7</div><div class="text-xs text-white/60 mt-1 tracking-wide">Shift Coverage</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 md:py-32 bg-black/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">What I Do</p>
+        <h2 class="section-title text-center mb-4 fade-up">Chatting that sells.</h2>
+        <p class="text-center text-white/70 mb-16 fade-up max-w-2xl mx-auto">End-to-end chatting and management built around one goal: more revenue per subscriber.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="glass rounded-xl p-6 card-hover fade-up"><div class="text-3xl mb-3">💬</div><h3 class="serif text-lg mb-2">Elite Chatting</h3><p class="text-white/70 text-sm">Personalized, in-character conversations that build rapport and keep subscribers spending.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.05s"><div class="text-3xl mb-3">💰</div><h3 class="serif text-lg mb-2">Sales &amp; PPV</h3><p class="text-white/70 text-sm">Fetish-based selling, PPV drops, and upsells timed to how each subscriber buys.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.1s"><div class="text-3xl mb-3">🔁</div><h3 class="serif text-lg mb-2">Retention &amp; Follow-ups</h3><p class="text-white/70 text-sm">New-sub onboarding, re-engagement, and spender follow-ups that protect recurring revenue.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.15s"><div class="text-3xl mb-3">📣</div><h3 class="serif text-lg mb-2">Mass Messaging</h3><p class="text-white/70 text-sm">MM scripts and scheduling that grab attention and convert without burning the list.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.2s"><div class="text-3xl mb-3">🎬</div><h3 class="serif text-lg mb-2">Model &amp; Content Management</h3><p class="text-white/70 text-sm">Account hygiene, content scheduling, and coordinating multiple models across a team.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.25s"><div class="text-3xl mb-3">🛡️</div><h3 class="serif text-lg mb-2">Compliance &amp; Reporting</h3><p class="text-white/70 text-sm">Platform-guideline awareness, discretion with sensitive data, and clean EOD sales reports.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">Results</p>
+        <h2 class="section-title text-center mb-4 fade-up">Proven sales impact.</h2>
+        <p class="text-center text-white/70 mb-14 fade-up max-w-2xl mx-auto">Figures drawn from real end-of-day and shift reports across agencies. Subscriber details are kept private — only performance totals are shown.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 fade-up">
+          <div class="glass rounded-2xl p-6 text-center card-hover"><div class="text-3xl md:text-4xl font-light neon-text">$3,687</div><div class="text-xs text-white/60 mt-2 tracking-wide">Peak Single Day</div></div>
+          <div class="glass rounded-2xl p-6 text-center card-hover"><div class="text-3xl md:text-4xl font-light neon-text">$1–2.5k</div><div class="text-xs text-white/60 mt-2 tracking-wide">Typical Daily Total</div></div>
+          <div class="glass rounded-2xl p-6 text-center card-hover"><div class="text-3xl md:text-4xl font-light neon-text">$806</div><div class="text-xs text-white/60 mt-2 tracking-wide">Best Net Shift (Gross $1,008)</div></div>
+          <div class="glass rounded-2xl p-6 text-center card-hover"><div class="text-3xl md:text-4xl font-light neon-text">80%+</div><div class="text-xs text-white/60 mt-2 tracking-wide">Typical Net-to-Gross</div></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass rounded-2xl p-8 fade-up">
+            <h3 class="serif text-xl mb-1 text-white">Top single-day totals</h3>
+            <p class="text-white/60 text-sm mb-5">Agency end-of-day grand totals (agent: Lloyd).</p>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Peak day</span><span class="text-cyan-300 font-medium">$3,687.72</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">High day</span><span class="text-cyan-300 font-medium">$2,490.20</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">High day</span><span class="text-cyan-300 font-medium">$2,064.59</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Strong day</span><span class="text-cyan-300 font-medium">$1,623.10</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Strong day</span><span class="text-cyan-300 font-medium">$1,569.63</span></div>
+              <div class="flex items-center justify-between"><span class="text-white/70">Strong day</span><span class="text-cyan-300 font-medium">$1,450.93</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-2xl p-8 fade-up" style="transition-delay:0.1s">
+            <h3 class="serif text-xl mb-1 text-white">Per-shift performance</h3>
+            <p class="text-white/60 text-sm mb-5">Gross → net on single 8-hour shifts (one model).</p>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Gross $1,008</span><span class="text-pink-300 font-medium">Net $806</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Gross $860</span><span class="text-pink-300 font-medium">Net $688</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Gross $795</span><span class="text-pink-300 font-medium">Net $636</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Gross $687</span><span class="text-pink-300 font-medium">Net $549</span></div>
+              <div class="flex items-center justify-between border-b border-white/5 pb-2"><span class="text-white/70">Gross $565</span><span class="text-pink-300 font-medium">Net $452</span></div>
+              <div class="flex items-center justify-between"><span class="text-white/70">Gross $425</span><span class="text-pink-300 font-medium">Net $332</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-24 md:py-32 bg-black/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">Process</p>
+        <h2 class="section-title text-center mb-4 fade-up">How I drive sales.</h2>
+        <p class="text-center text-white/70 mb-16 fade-up max-w-2xl mx-auto">A repeatable shift routine that turns traffic into revenue — and gets better every day.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="glass rounded-xl p-6 card-hover fade-up"><div class="text-cyan-300 text-sm mb-2">01</div><h3 class="serif text-lg mb-2">Read the traffic</h3><p class="text-white/70 text-sm">See who's online and active, prioritize spenders, and open with the right hook.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.05s"><div class="text-cyan-300 text-sm mb-2">02</div><h3 class="serif text-lg mb-2">Sell to the fetish</h3><p class="text-white/70 text-sm">Ask what turns each subscriber on, then tailor content and PPV to what they'll actually buy.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.1s"><div class="text-cyan-300 text-sm mb-2">03</div><h3 class="serif text-lg mb-2">Mass-message with intent</h3><p class="text-white/70 text-sm">Craft MMs that get attention and re-open conversations without exhausting the list.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.15s"><div class="text-cyan-300 text-sm mb-2">04</div><h3 class="serif text-lg mb-2">Follow up &amp; retain</h3><p class="text-white/70 text-sm">Build connections with new subs, follow up on spenders, and reduce churn shift over shift.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.2s"><div class="text-cyan-300 text-sm mb-2">05</div><h3 class="serif text-lg mb-2">Report the numbers</h3><p class="text-white/70 text-sm">Clean end-of-day gross/net reporting so agencies and models always know where sales stand.</p></div>
+          <div class="glass rounded-xl p-6 card-hover fade-up" style="transition-delay:0.25s"><div class="text-cyan-300 text-sm mb-2">06</div><h3 class="serif text-lg mb-2">Reflect &amp; improve</h3><p class="text-white/70 text-sm">Nightly self-review — what worked, why sales were up or down, and what to fix next shift.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section id="platforms" class="py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">Platforms &amp; Tools</p>
+        <h2 class="section-title text-center mb-4 fade-up">What I work with.</h2>
+        <p class="text-center text-white/70 mb-14 fade-up max-w-2xl mx-auto">Creator platforms, management &amp; chatting tools, and the traffic channels that feed them.</p>
+
+        <div class="mb-8 fade-up">
+          <p class="text-center text-white/60 text-xs uppercase tracking-widest mb-4">Creator &amp; management platforms</p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="pill pill-hot px-4 py-1.5 rounded-full text-sm">OnlyFans</span>
+            <span class="pill pill-hot px-4 py-1.5 rounded-full text-sm">Fanvue</span>
+            <span class="pill pill-hot px-4 py-1.5 rounded-full text-sm">Fansly</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Onlymonster</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Infloww</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Supercreator</span>
+          </div>
+        </div>
+
+        <div class="fade-up" style="transition-delay:0.1s">
+          <p class="text-center text-white/60 text-xs uppercase tracking-widest mb-4">Traffic, comms &amp; social</p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Instagram</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">X / Twitter</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">TikTok</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Reddit</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Discord</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Telegram</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">WhatsApp</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Viber</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">Facebook / Messenger</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">WeChat</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">YouTube</span>
+            <span class="pill px-4 py-1.5 rounded-full text-sm">LinkedIn</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-24 md:py-32 bg-black/40">
+      <div class="max-w-5xl mx-auto px-6">
+        <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">Experience</p>
+        <h2 class="section-title text-center mb-16 fade-up">Where I've chatted.</h2>
+        <div class="space-y-6">
+          <div class="glass rounded-2xl p-8 card-hover fade-up">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
+              <div><h3 class="serif text-xl text-white">Elite OnlyFans Chatter</h3><p class="text-cyan-300/90 text-sm">Dreamy Management</p></div>
+              <span class="text-white/60 text-sm whitespace-nowrap">Jul 2025 – May 2026</span>
+            </div>
+            <p class="text-white/70 leading-relaxed">Sales-driven chatting across a roster of models — audience engagement, PPV promotion, retention, and consistent daily grand totals in the four-figure range.</p>
+          </div>
+          <div class="glass rounded-2xl p-8 card-hover fade-up">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
+              <div><h3 class="serif text-xl text-white">OnlyFans Manager</h3><p class="text-cyan-300/90 text-sm">Passion Rich Studios (German Agency)</p></div>
+              <span class="text-white/60 text-sm whitespace-nowrap">Oct 2024 – Dec 2024</span>
+            </div>
+            <p class="text-white/70 leading-relaxed">Oversaw a portfolio of models and a team of chatters — content strategy, fan engagement, financial performance, and Instagram/Twitter growth to drive traffic.</p>
+          </div>
+          <div class="glass rounded-2xl p-8 card-hover fade-up">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
+              <div><h3 class="serif text-xl text-white">OF Chatter · Content Reviewer · Twitter Outreach</h3><p class="text-cyan-300/90 text-sm">Passion Rich Studios</p></div>
+              <span class="text-white/60 text-sm whitespace-nowrap">Oct 2024 – Jun 2025</span>
+            </div>
+            <p class="text-white/70 leading-relaxed">Owned subscriber communication, reviewed content for guideline compliance, and ran targeted Twitter outreach to grow visibility and leads.</p>
+          </div>
+          <div class="glass rounded-2xl p-8 card-hover fade-up">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
+              <div><h3 class="serif text-xl text-white">OnlyFans Chatter</h3><p class="text-cyan-300/90 text-sm">OPUS Chatting · Micco</p></div>
+              <span class="text-white/60 text-sm whitespace-nowrap">2024</span>
+            </div>
+            <p class="text-white/70 leading-relaxed">Single-model and multi-model chatting with detailed gross/net shift reporting, subscriber tracking, and nightly performance reflection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p class="text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">Get in touch</p>
+          <h2 class="section-title mb-4 fade-up">Let's grow your models.</h2>
+          <p class="text-white/70 max-w-2xl mx-auto fade-up">Available for OFM chatting, management, and team-lead roles. Send a message and I'll reply within 24 hours.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 items-stretch">
+          <div class="glass rounded-2xl p-8 md:p-10 fade-up">
+            <form id="contactForm" novalidate>
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <input type="text" id="cfName" required autocomplete="name" placeholder="Your Name" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/60 transition" />
+                <input type="email" id="cfEmail" required autocomplete="email" placeholder="Your Email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/60 transition" />
+              </div>
+              <textarea id="cfMsg" required rows="5" placeholder="Tell me about your agency / models" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/60 transition resize-y mb-2"></textarea>
+              <p id="cfStatus" class="text-xs text-cyan-300/80 min-h-[1.1em] mb-4" role="status" aria-live="polite"></p>
+              <button type="submit" class="btn-neon w-full sm:w-auto px-10 py-3 rounded-full text-sm tracking-widest uppercase">Send Message →</button>
+            </form>
+          </div>
+          <div class="glass rounded-2xl p-8 md:p-10 fade-up" style="transition-delay:0.1s">
+            <h3 class="serif text-sm tracking-[0.3em] uppercase text-cyan-300/90 mb-8">Contact Details</h3>
+            <div class="space-y-6">
+              <div class="flex items-center gap-4"><span class="text-cyan-400 text-lg">✉</span><div><div class="text-xs uppercase tracking-wider text-white/40">Email</div><a href="mailto:gotmilk766@gmail.com" class="hover:text-cyan-300 transition">gotmilk766@gmail.com</a></div></div>
+              <div class="flex items-center gap-4"><span class="text-cyan-400 text-lg">📱</span><div><div class="text-xs uppercase tracking-wider text-white/40">Phone</div><a href="tel:+639667980880" class="hover:text-cyan-300 transition">0966 798 0880</a><div class="text-xs text-cyan-300/70 mt-0.5">WhatsApp &amp; Telegram ready</div></div></div>
+              <div class="flex items-center gap-4"><span class="text-cyan-400 text-lg">⏱</span><div><div class="text-xs uppercase tracking-wider text-white/40">Response Time</div><span>Within 24 hours</span></div></div>
+              <div class="flex items-center gap-4"><span class="text-cyan-400 text-lg">◆</span><div><div class="text-xs uppercase tracking-wider text-white/40">Also see</div><a href="https://gotmilk766-gif.github.io/Lloyd-Portfolio/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-300 transition">My full portfolio →</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/5 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <a href="#home" class="serif text-2xl tracking-wide neon-text">Lloyd Allen</a>
+            <p class="text-white/60 text-sm mt-2 max-w-sm">OnlyFans management &amp; elite chatting — sales, retention, and model management that grows revenue.</p>
+          </div>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a href="#results" class="text-white/70 hover:text-cyan-300 transition">Results</a>
+            <a href="#platforms" class="text-white/70 hover:text-cyan-300 transition">Platforms</a>
+            <a href="#experience" class="text-white/70 hover:text-cyan-300 transition">Experience</a>
+            <a href="#contact" class="text-white/70 hover:text-cyan-300 transition">Contact</a>
+            <a href="mailto:gotmilk766@gmail.com" class="text-white/70 hover:text-cyan-300 transition">gotmilk766@gmail.com</a>
+          </div>
+        </div>
+        <div class="border-t border-white/5 mt-8 pt-6 text-center text-white/55 text-sm">
+          <p>© 2026 Lloyd Allen Clavo · OnlyFans Management &amp; Elite Chatting</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // BACKGROUND
+    const bgContainer = document.getElementById('canvas-container');
+    const bgScene = new THREE.Scene();
+    const bgCamera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 1000);
+    bgCamera.position.z = 30;
+    const bgRenderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+    bgRenderer.setSize(innerWidth, innerHeight); bgRenderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    bgContainer.appendChild(bgRenderer.domElement);
+    const N = 380, positions = new Float32Array(N*3), colors = new Float32Array(N*3);
+    const c1=new THREE.Color(0xff2d95), c2=new THREE.Color(0x00f0ff), c3=new THREE.Color(0xb14eff);
+    for (let i=0;i<N;i++){ positions[i*3]=(Math.random()-0.5)*80; positions[i*3+1]=(Math.random()-0.5)*80; positions[i*3+2]=(Math.random()-0.5)*60; const col=Math.random()>0.6?c1:(Math.random()>0.5?c2:c3); colors[i*3]=col.r; colors[i*3+1]=col.g; colors[i*3+2]=col.b; }
+    const pGeo=new THREE.BufferGeometry(); pGeo.setAttribute('position',new THREE.BufferAttribute(positions,3)); pGeo.setAttribute('color',new THREE.BufferAttribute(colors,3));
+    const particles=new THREE.Points(pGeo,new THREE.PointsMaterial({size:0.12,vertexColors:true,transparent:true,opacity:0.42,sizeAttenuation:true})); bgScene.add(particles);
+    const ringGeo=new THREE.TorusGeometry(8,0.07,16,100);
+    const ring1=new THREE.Mesh(ringGeo,new THREE.MeshBasicMaterial({color:0x00f0ff,transparent:true,opacity:0.12})); ring1.rotation.x=Math.PI/2.5; bgScene.add(ring1);
+    const ring2=new THREE.Mesh(ringGeo,new THREE.MeshBasicMaterial({color:0xff2d95,transparent:true,opacity:0.1})); ring2.rotation.x=Math.PI/3; ring2.rotation.y=0.4; ring2.scale.setScalar(1.3); bgScene.add(ring2);
+    let mx=0,my=0; document.addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth)*2-1;my=-(e.clientY/innerHeight)*2+1;});
+    (function anim(){ requestAnimationFrame(anim); particles.rotation.y+=0.0007; particles.rotation.x+=0.00025; ring1.rotation.z+=0.0028; ring2.rotation.z-=0.0018; bgCamera.position.x+=(mx*2.5-bgCamera.position.x)*0.03; bgCamera.position.y+=(my*1.8-bgCamera.position.y)*0.03; bgCamera.lookAt(bgScene.position); bgRenderer.render(bgScene,bgCamera); })();
+    addEventListener('resize',()=>{ bgCamera.aspect=innerWidth/innerHeight; bgCamera.updateProjectionMatrix(); bgRenderer.setSize(innerWidth,innerHeight); });
+
+    // REVEAL
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+    // MOBILE MENU
+    (function(){ const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu'),ic=document.getElementById('menuIcon'); if(!b||!m)return;
+      const ham='☰', x='×';
+      const set=o=>{m.classList.toggle('hidden',!o); b.setAttribute('aria-expanded',String(o)); ic.innerHTML=o?x:ham;};
+      b.addEventListener('click',()=>set(m.classList.contains('hidden'))); m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+    })();
+
+    // SCROLL-SPY
+    (function(){ const links=[...document.querySelectorAll('nav a[href^="#"]')]; const map={}; links.forEach(a=>{const id=a.getAttribute('href').slice(1); if(id)(map[id]=map[id]||[]).push(a);});
+      const secs=Object.keys(map).map(id=>document.getElementById(id)).filter(Boolean); if(!secs.length)return;
+      const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('active'));(map[e.target.id]||[]).forEach(a=>a.classList.add('active'));}}),{rootMargin:'-45% 0px -50% 0px'});
+      secs.forEach(s=>spy.observe(s));
+    })();
+
+    // CONTACT FORM
+    (function(){ const f=document.getElementById('contactForm'); if(!f)return; const st=document.getElementById('cfStatus'),n=document.getElementById('cfName'),em=document.getElementById('cfEmail'),ms=document.getElementById('cfMsg');
+      const ok=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      f.addEventListener('submit',e=>{ e.preventDefault(); const name=n.value.trim(),email=em.value.trim(),msg=ms.value.trim();
+        if(!name||!email||!msg){st.style.color='#ff2d95';st.textContent='Please fill in your name, email, and message.';return;}
+        if(!ok(email)){st.style.color='#ff2d95';st.textContent='That email address looks off — please check it.';return;}
+        st.style.color='rgba(0,240,255,0.85)'; st.textContent='Opening your email app…';
+        location.href='mailto:gotmilk766@gmail.com?subject='+encodeURIComponent('OFM inquiry from '+name)+'&body='+encodeURIComponent(msg+'\n\n— '+name+'\n'+email);
+      });
+    })();
+  </script>
+</body>
+</html>
