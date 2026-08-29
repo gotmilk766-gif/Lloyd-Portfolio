@@ -9,11 +9,16 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E" />
   <!-- Social sharing -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gotmilk766-gif.github.io/Lloyd-Portfolio/" />
   <meta property="og:title" content="Lloyd Allen Clavo | Digital Playground" />
-  <meta property="og:description" content="Digital Content Strategist, Web Developer, Process Analyst & VA — turning complex operations and creator revenue into smooth, profitable systems." />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:description" content="One versatile operator — web & automation, operations & VA, chat & growth, and 3D design. Turning ideas into working systems." />
+  <meta property="og:image" content="https://gotmilk766-gif.github.io/Lloyd-Portfolio/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lloyd Allen Clavo | Digital Playground" />
-  <meta name="twitter:description" content="Digital Content Strategist, Web Developer, Process Analyst & VA." />
+  <meta name="twitter:description" content="One versatile operator — web & automation, operations, chat & growth, and 3D design." />
+  <meta name="twitter:image" content="https://gotmilk766-gif.github.io/Lloyd-Portfolio/assets/og.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/STLLoader.js"></script>
@@ -70,6 +75,8 @@
       transition: width 0.3s ease;
     }
     .nav-link:hover::after { width: 100%; }
+    .nav-link.active { color: #fff; }
+    .nav-link.active::after { width: 100%; }
     .card-hover {
       transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     }
@@ -170,7 +177,7 @@
         <div class="hidden md:flex items-center gap-8 text-sm tracking-wide">
           <a href="#about" class="nav-link hover:text-white">About</a>
           <a href="#experience" class="nav-link hover:text-white">Experience</a>
-          <a href="#skills" class="nav-link hover:text-white">Skills</a>
+          <a href="#skills" class="nav-link hover:text-white">What I Do</a>
           <a href="#work" class="nav-link hover:text-white">Work</a>
           <a href="#lab" class="nav-link hover:text-white">3D Lab</a>
           <a href="#education" class="nav-link hover:text-white">Education</a>
@@ -188,7 +195,7 @@
         <div class="px-6 py-4 flex flex-col text-sm tracking-wide">
           <a href="#about" class="nav-link hover:text-white">About</a>
           <a href="#experience" class="nav-link hover:text-white">Experience</a>
-          <a href="#skills" class="nav-link hover:text-white">Skills</a>
+          <a href="#skills" class="nav-link hover:text-white">What I Do</a>
           <a href="#work" class="nav-link hover:text-white">Work</a>
           <a href="#lab" class="nav-link hover:text-white">3D Lab</a>
           <a href="#education" class="nav-link hover:text-white">Education</a>
@@ -201,6 +208,11 @@
 
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
       <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="fade-up mb-6">
+          <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white/75 border border-white/15 rounded-full px-4 py-1.5">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>Available for work
+          </span>
+        </div>
         <p class="text-sm tracking-[0.4em] uppercase text-cyan-300 mb-6 fade-up">Web &amp; Automation · Operations &amp; VA · Chat &amp; Growth · 3D Design</p>
         <h1 class="section-title neon-text mb-4 fade-up" style="transition-delay:0.1s">Peep My Digital<br>Playground</h1>
         <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 fade-up" style="transition-delay:0.2s">
@@ -649,8 +661,27 @@
       </div>
     </section>
 
-    <footer class="border-t border-white/5 py-8 text-center text-white/55 text-sm">
-      <p>© 2026 Lloyd Allen Clavo · Digital Playground</p>
+    <footer class="border-t border-white/5 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <a href="#home" class="serif text-2xl tracking-widest neon-text">LAC</a>
+            <p class="text-white/60 text-sm mt-2 max-w-sm">One versatile operator — dev &amp; automation, operations, chat &amp; growth, and 3D design.</p>
+          </div>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a href="#work" class="text-white/70 hover:text-cyan-300 transition">Work</a>
+            <a href="#lab" class="text-white/70 hover:text-cyan-300 transition">3D Lab</a>
+            <a href="#experience" class="text-white/70 hover:text-cyan-300 transition">Experience</a>
+            <a href="#contact" class="text-white/70 hover:text-cyan-300 transition">Contact</a>
+            <a href="assets/Lloyd-Allen-Clavo-Resume.pdf" download class="text-white/70 hover:text-cyan-300 transition">Résumé</a>
+            <a href="https://github.com/gotmilk766-gif" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-cyan-300 transition">GitHub</a>
+            <a href="mailto:gotmilk766@gmail.com" class="text-white/70 hover:text-cyan-300 transition">gotmilk766@gmail.com</a>
+          </div>
+        </div>
+        <div class="border-t border-white/5 mt-8 pt-6 text-center text-white/55 text-sm">
+          <p>© 2026 Lloyd Allen Clavo · Digital Playground</p>
+        </div>
+      </div>
     </footer>
   </div>
 
@@ -728,6 +759,24 @@
       };
       btn.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    })();
+
+    // SCROLL-SPY NAV
+    (function () {
+      const links = [...document.querySelectorAll('nav a[href^="#"]')];
+      const map = {};
+      links.forEach(a => { const id = a.getAttribute('href').slice(1); if (id) (map[id] = map[id] || []).push(a); });
+      const sections = Object.keys(map).map(id => document.getElementById(id)).filter(Boolean);
+      if (!sections.length) return;
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            links.forEach(a => a.classList.remove('active'));
+            (map[e.target.id] || []).forEach(a => a.classList.add('active'));
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      sections.forEach(s => spy.observe(s));
     })();
 
     // CONTACT FORM (no backend — builds a pre-filled email)
