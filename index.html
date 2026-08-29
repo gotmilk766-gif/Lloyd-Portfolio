@@ -443,6 +443,7 @@
               <button type="button" class="resume-btn stl-btn active" data-model="models/shard-of-narsil.stl" data-name="Shard of Narsil">Shard of Narsil</button>
               <button type="button" class="resume-btn stl-btn" data-model="models/baby-display-stand.stl" data-name="Baby Display Stand">Display Stand</button>
               <button type="button" class="resume-btn stl-btn" data-model="models/baby-relief.stl" data-name="Baby Relief">Baby Relief</button>
+              <button type="button" class="resume-btn stl-btn" data-model="models/sleeping-cherub.stl" data-name="Sleeping Cherub (Meshy AI)">Sleeping Cherub</button>
             </div>
             <p class="resume-hint">Drag to rotate · Scroll to zoom</p>
           </div>
@@ -761,13 +762,15 @@
 
       const pivot = new THREE.Group(); scene.add(pivot);
       const loader = new THREE.STLLoader();
-      let mesh = null, camDist = 4, loadedUrl = null;
+      let mesh = null, camDist = 4, loadedUrl = null, reqId = 0;
 
       function loadModel(url, name) {
         if (loadedUrl === url) return;
         loadedUrl = url;
+        const myReq = ++reqId;
         if (statusEl) statusEl.textContent = 'Loading ' + (name || 'model') + '…';
         loader.load(url, function (geometry) {
+          if (myReq !== reqId) { if (geometry.dispose) geometry.dispose(); return; }
           if (mesh) { pivot.remove(mesh); mesh.geometry.dispose(); mesh.material.dispose(); mesh = null; }
           geometry.center();
           geometry.computeVertexNormals();
