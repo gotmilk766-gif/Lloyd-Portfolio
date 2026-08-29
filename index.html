@@ -16,6 +16,7 @@
   <meta name="twitter:description" content="Digital Content Strategist, Web Developer, Process Analyst & VA." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/STLLoader.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -168,10 +169,10 @@
         <a href="#home" class="serif text-xl tracking-widest neon-text">LAC</a>
         <div class="hidden md:flex items-center gap-8 text-sm tracking-wide">
           <a href="#about" class="nav-link hover:text-white">About</a>
-          <a href="#resume3d" class="nav-link hover:text-white">3D Resume</a>
           <a href="#experience" class="nav-link hover:text-white">Experience</a>
           <a href="#skills" class="nav-link hover:text-white">Skills</a>
           <a href="#work" class="nav-link hover:text-white">Work</a>
+          <a href="#lab" class="nav-link hover:text-white">3D Lab</a>
           <a href="#education" class="nav-link hover:text-white">Education</a>
           <a href="#certifications" class="nav-link hover:text-white">Certifications</a>
           <a href="#contact" class="nav-link hover:text-white">Contact</a>
@@ -186,10 +187,10 @@
       <div id="mobileMenu" class="md:hidden hidden glass border-t border-white/5">
         <div class="px-6 py-4 flex flex-col text-sm tracking-wide">
           <a href="#about" class="nav-link hover:text-white">About</a>
-          <a href="#resume3d" class="nav-link hover:text-white">3D Resume</a>
           <a href="#experience" class="nav-link hover:text-white">Experience</a>
           <a href="#skills" class="nav-link hover:text-white">Skills</a>
           <a href="#work" class="nav-link hover:text-white">Work</a>
+          <a href="#lab" class="nav-link hover:text-white">3D Lab</a>
           <a href="#education" class="nav-link hover:text-white">Education</a>
           <a href="#certifications" class="nav-link hover:text-white">Certifications</a>
           <a href="#contact" class="nav-link hover:text-white">Contact</a>
@@ -206,7 +207,7 @@
           Lloyd Allen Clavo — turning complex operations, high-volume chat, and creator revenue into smooth, profitable systems.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up" style="transition-delay:0.3s">
-          <a href="#resume3d" class="btn-neon px-8 py-3 rounded-full text-sm tracking-widest uppercase">View 3D Resume →</a>
+          <a href="#work" class="btn-neon px-8 py-3 rounded-full text-sm tracking-widest uppercase">View My Work →</a>
           <a href="mailto:gotmilk766@gmail.com" class="px-8 py-3 rounded-full text-sm tracking-widest uppercase border border-white/20 hover:border-cyan-400/50 transition">gotmilk766@gmail.com</a>
         </div>
       </div>
@@ -244,24 +245,6 @@
       </div>
     </section>
 
-    <!-- CLEAN 3D RESUME (NO POST-PROCESSING) -->
-    <section id="resume3d" class="py-24 md:py-32 bg-black/50">
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 class="section-title neon-text text-center mb-3 fade-up">3D Resume</h2>
-        <p class="text-center text-white/50 mb-4 fade-up">Drag to rotate · Flip for experience</p>
-        <p class="resume-status fade-up" id="resumeStatus">Loading…</p>
-
-        <div id="resume-webgl" class="fade-up"></div>
-
-        <div class="resume-controls fade-up">
-          <button class="resume-btn" id="flipBtn">Flip Card</button>
-          <button class="resume-btn" id="resetBtn">Reset View</button>
-          <button class="resume-btn" id="autoBtn">Auto Rotate</button>
-          <a href="mailto:gotmilk766@gmail.com" class="resume-btn">Email Lloyd</a>
-        </div>
-        <p class="resume-hint fade-up">Click & drag · Scroll to zoom · Double-click to flip</p>
-      </div>
-    </section>
 
     <section id="experience" class="py-24 md:py-32">
       <div class="max-w-6xl mx-auto px-6">
@@ -445,6 +428,71 @@
       </div>
     </section>
 
+    <!-- 3D LAB -->
+    <section id="lab" class="py-24 md:py-32 bg-black/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="section-title neon-text text-center mb-4 fade-up">3D Lab</h2>
+        <p class="text-center text-white/50 mb-12 fade-up">Modeling, sculpting &amp; print design — drag the model to explore</p>
+
+        <div class="grid md:grid-cols-2 gap-6 items-stretch mb-16">
+          <!-- Interactive STL viewer -->
+          <div class="glass rounded-2xl p-4 fade-up">
+            <div id="stl-viewer" style="height:420px;border-radius:16px;overflow:hidden;background:radial-gradient(ellipse at center,rgba(20,20,40,0.6) 0%,rgba(0,0,0,0.9) 70%);border:1px solid rgba(255,255,255,0.08);cursor:grab;touch-action:none;"></div>
+            <p id="stlStatus" class="resume-status">Scroll in to load the model…</p>
+            <div class="flex flex-wrap gap-2 justify-center mt-3">
+              <button type="button" class="resume-btn stl-btn active" data-model="models/shard-of-narsil.stl" data-name="Shard of Narsil">Shard of Narsil</button>
+              <button type="button" class="resume-btn stl-btn" data-model="models/baby-display-stand.stl" data-name="Baby Display Stand">Display Stand</button>
+              <button type="button" class="resume-btn stl-btn" data-model="models/baby-relief.stl" data-name="Baby Relief">Baby Relief</button>
+            </div>
+            <p class="resume-hint">Drag to rotate · Scroll to zoom</p>
+          </div>
+
+          <!-- Copy + tools -->
+          <div class="glass rounded-2xl p-8 md:p-10 fade-up flex flex-col justify-center" style="transition-delay:0.1s">
+            <h3 class="serif text-2xl mb-4 neon-text">From model to material.</h3>
+            <p class="text-white/75 leading-relaxed mb-4">I model, sculpt, and prep pieces for 3D printing — from AI-assisted concepts to clean, printable STLs — then slice, print, and finish them on a Bambu Lab P1S.</p>
+            <p class="text-white/60 text-sm mb-8">The viewer loads my actual STL files. Drag to spin one around, scroll to zoom, and switch models with the buttons.</p>
+            <p class="text-cyan-300/70 tracking-widest text-xs uppercase mb-3">Tools I use</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill px-4 py-1.5 rounded-full text-xs tracking-wide">Bambu Lab P1S</span>
+              <span class="skill-pill px-4 py-1.5 rounded-full text-xs tracking-wide">Bambu Studio</span>
+              <span class="skill-pill px-4 py-1.5 rounded-full text-xs tracking-wide">Blender</span>
+              <span class="skill-pill px-4 py-1.5 rounded-full text-xs tracking-wide">Meshy AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Print workflow gallery -->
+        <p class="text-center text-cyan-300/70 tracking-widest text-xs uppercase mb-6 fade-up">The print workflow</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <figure class="glass rounded-xl overflow-hidden card-hover fade-up m-0">
+            <img src="assets/prints/01-blender-sculpting.webp" loading="lazy" alt="Sculpting the model in Blender" class="w-full h-56 object-cover" />
+            <figcaption class="px-4 py-3 text-sm text-white/70">Sculpting in Blender</figcaption>
+          </figure>
+          <figure class="glass rounded-xl overflow-hidden card-hover fade-up m-0">
+            <img src="assets/prints/02-p1s-printing.webp" loading="lazy" alt="Printing on the Bambu Lab P1S" class="w-full h-56 object-cover" />
+            <figcaption class="px-4 py-3 text-sm text-white/70">Printing on the Bambu Lab P1S</figcaption>
+          </figure>
+          <figure class="glass rounded-xl overflow-hidden card-hover fade-up m-0">
+            <img src="assets/prints/03-support-removal.webp" loading="lazy" alt="Removing print supports" class="w-full h-56 object-cover" />
+            <figcaption class="px-4 py-3 text-sm text-white/70">Removing supports</figcaption>
+          </figure>
+          <figure class="glass rounded-xl overflow-hidden card-hover fade-up m-0">
+            <img src="assets/prints/04-painting.webp" loading="lazy" alt="Hand-finishing and painting the figurine" class="w-full h-56 object-cover" />
+            <figcaption class="px-4 py-3 text-sm text-white/70">Hand-finishing &amp; painting</figcaption>
+          </figure>
+          <figure class="glass rounded-xl overflow-hidden card-hover fade-up m-0">
+            <img src="assets/prints/05-placing.webp" loading="lazy" alt="Placing the finished figurine" class="w-full h-56 object-cover" />
+            <figcaption class="px-4 py-3 text-sm text-white/70">Final placement</figcaption>
+          </figure>
+          <figure class="glass rounded-xl overflow-hidden card-hover fade-up m-0">
+            <img src="assets/prints/06-finished.webp" loading="lazy" alt="The finished 3D-printed piece" class="w-full h-56 object-cover" />
+            <figcaption class="px-4 py-3 text-sm text-white/70">Finished piece</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section id="education" class="py-24 md:py-32">
       <div class="max-w-4xl mx-auto px-6">
         <h2 class="section-title neon-text text-center mb-16 fade-up">My Academic Credentials</h2>
@@ -553,6 +601,7 @@
                 <div>
                   <div class="text-xs uppercase tracking-wider text-white/40">Phone</div>
                   <a href="tel:+639667980880" class="hover:text-cyan-300 transition">0966 798 0880</a>
+                  <div class="text-xs text-cyan-300/70 mt-0.5">WhatsApp &amp; Telegram ready</div>
                 </div>
               </div>
               <div class="flex items-center gap-4">
@@ -688,179 +737,99 @@
       });
     })();
 
-    // CLEAN 3D RESUME (NO POST-PROCESSING)
-    (function() {
-      const container = document.getElementById('resume-webgl');
-      const statusEl = document.getElementById('resumeStatus');
-      if (!container) return;
+    // 3D STL VIEWER
+    (function () {
+      const container = document.getElementById('stl-viewer');
+      if (!container || typeof THREE === 'undefined' || !THREE.STLLoader) return;
+      const statusEl = document.getElementById('stlStatus');
+      const btns = Array.from(document.querySelectorAll('.stl-btn'));
+      const W = () => container.clientWidth || 400;
+      const H = () => container.clientHeight || 420;
 
-      function createResumeTexture(isFront) {
-        const canvas = document.createElement('canvas');
-        canvas.width = 512; canvas.height = 720;
-        const ctx = canvas.getContext('2d');
-        const grad = ctx.createLinearGradient(0,0,512,720);
-        grad.addColorStop(0, '#0f0f1a'); grad.addColorStop(1, '#05050f');
-        ctx.fillStyle = grad; ctx.fillRect(0,0,512,720);
-        ctx.strokeStyle = 'rgba(0,240,255,0.25)'; ctx.lineWidth = 3; ctx.strokeRect(8,8,496,704);
-        ctx.strokeStyle = 'rgba(255,45,149,0.15)'; ctx.lineWidth = 1; ctx.strokeRect(16,16,480,688);
-        ctx.textAlign = 'center'; ctx.textBaseline = 'top';
-
-        if (isFront) {
-          ctx.font = '600 36px "Playfair Display", serif'; ctx.fillStyle = '#fff';
-          ctx.fillText('Lloyd Allen Clavo', 256, 48);
-          ctx.font = '500 14px Inter, sans-serif'; ctx.fillStyle = '#00f0ff';
-          ctx.fillText('PROCESS ANALYST  ·  OPERATIONS EXCELLENCE', 256, 96);
-          ctx.strokeStyle = 'rgba(255,255,255,0.12)'; ctx.beginPath(); ctx.moveTo(60,130); ctx.lineTo(452,130); ctx.stroke();
-          ctx.font = '400 15px Inter, sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.78)'; ctx.textAlign = 'left';
-          wrapText(ctx, 'Process-focused professional with 8+ years of experience in process analysis, workflow optimization, and high-volume operations support.', 48, 155, 416, 22);
-          ctx.font = '600 12px Inter, sans-serif'; ctx.fillStyle = '#ff2d95'; ctx.fillText('CORE STRENGTHS', 48, 250);
-          ctx.font = '400 14px Inter, sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.7)';
-          ['• End-to-end process & bottleneck analysis','• High-volume multi-channel support','• Sales-driven OnlyFans chatting','• Content compliance & community growth','• Cross-functional collaboration'].forEach((s,i) => ctx.fillText(s, 48, 278 + i*26));
-          ctx.font = '600 12px Inter, sans-serif'; ctx.fillStyle = '#ff2d95'; ctx.fillText('CURRENT FOCUS', 48, 430);
-          ctx.font = '400 14px Inter, sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.7)';
-          wrapText(ctx, 'Elite chatting, process leadership, and creator revenue systems at top agencies.', 48, 456, 416, 22);
-          ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.beginPath(); ctx.moveTo(60,560); ctx.lineTo(452,560); ctx.stroke();
-          ctx.font = '400 13px Inter, sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.textAlign = 'center';
-          ctx.fillText('0966 798 0880  ·  gotmilk766@gmail.com', 256, 585);
-          ctx.fillText('Taguig / Makati City, Philippines', 256, 610);
-        } else {
-          ctx.font = '600 32px "Playfair Display", serif'; ctx.fillStyle = '#fff'; ctx.fillText('Key Experience', 256, 48);
-          ctx.font = '500 13px Inter, sans-serif'; ctx.fillStyle = '#00f0ff'; ctx.fillText('SELECTED ROLES & IMPACT', 256, 92);
-          ctx.strokeStyle = 'rgba(255,255,255,0.12)'; ctx.beginPath(); ctx.moveTo(60,125); ctx.lineTo(452,125); ctx.stroke();
-          ctx.textAlign = 'left';
-          const jobs = [
-            {p:'2025 – 2026', t:'Elite OnlyFans Chatter', c:'Dreamy Management', d:'Audience engagement, PPV sales, long-term loyalty'},
-            {p:'2024 – 2025', t:'Manager / Content Specialist', c:'Passion Rich Studios', d:'Portfolio management, chatter oversight, Twitter growth'},
-            {p:'2022 – 2025', t:'CSR / Chat Support', c:'24/7.AI (Kohl’s)', d:'High-volume voice & chat, fraud, CSAT excellence'},
-            {p:'2017 – 2021', t:'Process Analyst', c:'Emapta & iOPEX', d:'Workflow optimization, classification systems'}
-          ];
-          let y = 150;
-          jobs.forEach(j => {
-            ctx.font = '600 11px Inter, sans-serif'; ctx.fillStyle = '#ff2d95'; ctx.fillText(j.p, 48, y);
-            ctx.font = '600 15px Inter, sans-serif'; ctx.fillStyle = '#fff'; ctx.fillText(j.t, 48, y+22);
-            ctx.font = '400 13px Inter, sans-serif'; ctx.fillStyle = 'rgba(0,240,255,0.85)'; ctx.fillText(j.c, 48, y+44);
-            ctx.font = '400 12px Inter, sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.fillText(j.d, 48, y+64);
-            y += 105;
-          });
-          ctx.font = '400 12px Inter, sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.4)'; ctx.textAlign = 'center';
-          ctx.fillText('Drag · Flip · Hire', 256, 670);
-        }
-        const tex = new THREE.CanvasTexture(canvas);
-        tex.anisotropy = 8; tex.needsUpdate = true;
-        return tex;
-      }
-
-      function wrapText(ctx, text, x, y, maxW, lh) {
-        const words = text.split(' '); let line = '';
-        for (let n=0; n<words.length; n++) {
-          const test = line + words[n] + ' ';
-          if (ctx.measureText(test).width > maxW && n>0) { ctx.fillText(line, x, y); line = words[n]+' '; y += lh; }
-          else line = test;
-        }
-        ctx.fillText(line, x, y);
-      }
-
-      const width = container.clientWidth;
-      const height = container.clientHeight || 520;
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(40, width/height, 0.1, 100);
-      camera.position.set(0, 0, 6.2);
-
+      const camera = new THREE.PerspectiveCamera(45, W() / H(), 0.01, 100000);
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(W(), H());
       renderer.setClearColor(0x000000, 0);
       container.appendChild(renderer.domElement);
 
-      scene.add(new THREE.AmbientLight(0xffffff, 0.85));
-      const dl1 = new THREE.DirectionalLight(0x00f0ff, 0.35); dl1.position.set(3,4,5); scene.add(dl1);
-      const dl2 = new THREE.DirectionalLight(0xff2d95, 0.25); dl2.position.set(-3,-2,4); scene.add(dl2);
+      scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+      const key = new THREE.DirectionalLight(0x00f0ff, 0.95); key.position.set(1, 1, 1); scene.add(key);
+      const fill = new THREE.DirectionalLight(0xff2d95, 0.6); fill.position.set(-1, -0.5, 0.5); scene.add(fill);
+      const top = new THREE.DirectionalLight(0xffffff, 0.45); top.position.set(0, 1, 0.2); scene.add(top);
 
-      const geo = new THREE.BoxGeometry(2.4, 3.4, 0.04);
-      const frontTex = createResumeTexture(true);
-      const backTex = createResumeTexture(false);
-      const materials = [
-        new THREE.MeshStandardMaterial({ color: 0x111122, metalness: 0.3, roughness: 0.6 }),
-        new THREE.MeshStandardMaterial({ color: 0x111122, metalness: 0.3, roughness: 0.6 }),
-        new THREE.MeshStandardMaterial({ color: 0x111122, metalness: 0.3, roughness: 0.6 }),
-        new THREE.MeshStandardMaterial({ color: 0x111122, metalness: 0.3, roughness: 0.6 }),
-        new THREE.MeshStandardMaterial({ map: frontTex, metalness: 0.1, roughness: 0.7 }),
-        new THREE.MeshStandardMaterial({ map: backTex, metalness: 0.1, roughness: 0.7 })
-      ];
-      const card = new THREE.Mesh(geo, materials);
-      scene.add(card);
+      const pivot = new THREE.Group(); scene.add(pivot);
+      const loader = new THREE.STLLoader();
+      let mesh = null, camDist = 4, loadedUrl = null;
 
-      const glow = new THREE.Mesh(
-        new THREE.PlaneGeometry(3.2, 4.4),
-        new THREE.MeshBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.06, side: THREE.DoubleSide })
-      );
-      glow.position.z = -0.15; scene.add(glow);
-
-      let isDragging = false, prevX = 0, prevY = 0;
-      let rotX = 0.15, rotY = -0.35, targetRotX = 0.15, targetRotY = -0.35;
-      let isFlipped = false, autoRotate = false, zoom = 6.2;
-      card.rotation.x = rotX; card.rotation.y = rotY;
-
-      function getPos(e) {
-        if (e.touches && e.touches.length) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        return { x: e.clientX, y: e.clientY };
+      function loadModel(url, name) {
+        if (loadedUrl === url) return;
+        loadedUrl = url;
+        if (statusEl) statusEl.textContent = 'Loading ' + (name || 'model') + '…';
+        loader.load(url, function (geometry) {
+          if (mesh) { pivot.remove(mesh); mesh.geometry.dispose(); mesh.material.dispose(); mesh = null; }
+          geometry.center();
+          geometry.computeVertexNormals();
+          geometry.computeBoundingSphere();
+          const r = (geometry.boundingSphere && geometry.boundingSphere.radius) || 1;
+          const mat = new THREE.MeshStandardMaterial({ color: 0xdfe7ff, metalness: 0.25, roughness: 0.55 });
+          mesh = new THREE.Mesh(geometry, mat);
+          mesh.rotation.x = -Math.PI / 2;
+          pivot.add(mesh);
+          camDist = r * 2.6;
+          camera.position.set(0, 0, camDist);
+          camera.near = Math.max(r / 100, 0.01); camera.far = r * 100; camera.updateProjectionMatrix();
+          if (statusEl) statusEl.textContent = name || 'Model loaded';
+        }, function (xhr) {
+          if (statusEl && xhr.total) statusEl.textContent = 'Loading… ' + Math.round((xhr.loaded / xhr.total) * 100) + '%';
+        }, function () {
+          if (statusEl) statusEl.textContent = 'Could not load this model.';
+          loadedUrl = null;
+        });
       }
 
-      container.addEventListener('mousedown', e => { isDragging = true; const p = getPos(e); prevX = p.x; prevY = p.y; autoRotate = false; document.getElementById('autoBtn').classList.remove('active'); });
-      window.addEventListener('mousemove', e => {
-        if (!isDragging) return;
-        const p = getPos(e); const dx = p.x - prevX, dy = p.y - prevY;
-        targetRotY += dx * 0.008; targetRotX += dy * 0.006;
-        targetRotX = Math.max(-0.9, Math.min(0.9, targetRotX));
-        prevX = p.x; prevY = p.y;
-      });
-      window.addEventListener('mouseup', () => { isDragging = false; });
-
-      container.addEventListener('touchstart', e => { e.preventDefault(); isDragging = true; const p = getPos(e); prevX = p.x; prevY = p.y; autoRotate = false; document.getElementById('autoBtn').classList.remove('active'); }, { passive: false });
-      window.addEventListener('touchmove', e => {
-        if (!isDragging) return; e.preventDefault();
-        const p = getPos(e); const dx = p.x - prevX, dy = p.y - prevY;
-        targetRotY += dx * 0.008; targetRotX += dy * 0.006;
-        targetRotX = Math.max(-0.9, Math.min(0.9, targetRotX));
-        prevX = p.x; prevY = p.y;
-      }, { passive: false });
-      window.addEventListener('touchend', () => { isDragging = false; });
-
-      container.addEventListener('wheel', e => { e.preventDefault(); zoom += e.deltaY * 0.004; zoom = Math.max(4.2, Math.min(9, zoom)); }, { passive: false });
-      container.addEventListener('dblclick', () => { isFlipped = !isFlipped; targetRotY += Math.PI; });
-
-      document.getElementById('flipBtn').addEventListener('click', () => {
-        isFlipped = !isFlipped; targetRotY += Math.PI;
-        statusEl.textContent = isFlipped ? 'Showing Experience side' : 'Showing Profile side';
-      });
-      document.getElementById('resetBtn').addEventListener('click', () => {
-        isFlipped = false; targetRotX = 0.15; targetRotY = -0.35; zoom = 6.2; autoRotate = false;
-        document.getElementById('autoBtn').classList.remove('active'); statusEl.textContent = 'View reset';
-      });
-      document.getElementById('autoBtn').addEventListener('click', function() {
-        autoRotate = !autoRotate; this.classList.toggle('active', autoRotate);
-        statusEl.textContent = autoRotate ? 'Auto-rotate ON' : 'Auto-rotate OFF';
-      });
-
-      window.addEventListener('resize', () => {
-        const w = container.clientWidth, h = container.clientHeight || 520;
-        camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h);
-      });
+      let dragging = false, px = 0, py = 0, tRotX = 0.35, tRotY = 0.6, rotX = 0.35, rotY = 0.6, autoRotate = true;
+      const pos = e => (e.touches && e.touches.length) ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : { x: e.clientX, y: e.clientY };
+      const onDown = e => { dragging = true; const p = pos(e); px = p.x; py = p.y; autoRotate = false; };
+      const onMove = e => { if (!dragging) return; const p = pos(e); tRotY += (p.x - px) * 0.01; tRotX += (p.y - py) * 0.01; tRotX = Math.max(-1.45, Math.min(1.45, tRotX)); px = p.x; py = p.y; };
+      const onUp = () => { dragging = false; };
+      container.addEventListener('mousedown', onDown);
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onUp);
+      container.addEventListener('touchstart', onDown, { passive: true });
+      window.addEventListener('touchmove', onMove, { passive: true });
+      window.addEventListener('touchend', onUp);
+      container.addEventListener('wheel', e => { e.preventDefault(); camDist *= (1 + e.deltaY * 0.001); camDist = Math.max(0.4, camDist); }, { passive: false });
 
       function animate() {
         requestAnimationFrame(animate);
-        if (autoRotate && !isDragging) targetRotY += 0.004;
-        rotX += (targetRotX - rotX) * 0.1;
-        rotY += (targetRotY - rotY) * 0.1;
-        card.rotation.x = rotX; card.rotation.y = rotY;
-        card.position.y = Math.sin(Date.now() * 0.0012) * 0.06;
-        camera.position.z += (zoom - camera.position.z) * 0.08;
-        glow.material.opacity = 0.04 + Math.sin(Date.now() * 0.002) * 0.02;
+        if (autoRotate && !dragging) tRotY += 0.005;
+        rotX += (tRotX - rotX) * 0.1; rotY += (tRotY - rotY) * 0.1;
+        pivot.rotation.x = rotX; pivot.rotation.y = rotY;
+        camera.position.z += (camDist - camera.position.z) * 0.1;
         renderer.render(scene, camera);
       }
       animate();
-      statusEl.textContent = 'Ready · Drag to explore';
+
+      window.addEventListener('resize', () => { camera.aspect = W() / H(); camera.updateProjectionMatrix(); renderer.setSize(W(), H()); });
+
+      btns.forEach(b => b.addEventListener('click', () => {
+        btns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        autoRotate = true;
+        loadModel(b.dataset.model, b.dataset.name);
+      }));
+
+      // Lazy-load the default model only when the section scrolls into view
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (en.isIntersecting && btns[0]) { loadModel(btns[0].dataset.model, btns[0].dataset.name); io.disconnect(); }
+        });
+      }, { threshold: 0.15 });
+      io.observe(container);
     })();
+
   </script>
 </body>
 </html>
