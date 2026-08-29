@@ -214,6 +214,7 @@
         </div>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up" style="transition-delay:0.3s">
           <a href="#work" class="btn-neon px-8 py-3 rounded-full text-sm tracking-widest uppercase">View My Work →</a>
+          <a href="assets/Lloyd-Allen-Clavo-Resume.pdf" download class="px-8 py-3 rounded-full text-sm tracking-widest uppercase border border-white/25 hover:border-cyan-400/60 transition">Download Résumé ↓</a>
           <a href="mailto:gotmilk766@gmail.com" class="px-8 py-3 rounded-full text-sm tracking-widest uppercase border border-white/25 hover:border-cyan-400/60 transition">Get in Touch</a>
         </div>
       </div>
@@ -379,59 +380,67 @@
 
           <!-- Featured: Apply4Me -->
           <a href="https://apply4me.vercel.app" target="_blank" rel="noopener noreferrer"
-             class="glass rounded-2xl p-8 card-hover fade-up block md:col-span-2 group">
-            <div class="flex items-start justify-between mb-4">
-              <div class="flex items-center gap-4">
-                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/25 to-pink-500/25 border border-cyan-400/30 flex items-center justify-center text-3xl">🧭</div>
-                <div>
-                  <h3 class="serif text-2xl text-white group-hover:text-cyan-200 transition">Apply4Me <span class="text-xs align-middle ml-2 px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-300 tracking-widest uppercase">Featured</span></h3>
-                  <p class="text-cyan-300/80 text-sm tracking-wide">Full-Stack Job Marketplace · Designed &amp; Built End-to-End</p>
+             class="glass rounded-2xl card-hover fade-up block md:col-span-2 group overflow-hidden">
+            <div class="grid md:grid-cols-2">
+              <div class="relative overflow-hidden">
+                <img src="assets/work/apply4me.png" alt="Apply4Me — full-stack job marketplace" loading="lazy" class="w-full h-56 md:h-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                <span class="absolute top-3 left-3 text-[10px] px-2 py-0.5 rounded-full bg-pink-500/25 text-pink-100 tracking-widest uppercase backdrop-blur">Featured</span>
+              </div>
+              <div class="p-8">
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 class="serif text-2xl text-white group-hover:text-cyan-200 transition">Apply4Me</h3>
+                    <p class="text-cyan-300 text-sm tracking-wide">Full-Stack Job Marketplace · Built End-to-End</p>
+                  </div>
+                  <span class="text-xs text-cyan-300 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
+                </div>
+                <p class="text-white/75 leading-relaxed mb-5">A complete job marketplace built from scratch — employer &amp; job-seeker dashboards, real-time messaging, AI-assisted job posting, secure online payments, and an approval-gated listing engine. Frontend, backend, database, and cloud functions, shipped solo.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Firebase</span>
+                  <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Cloud Functions</span>
+                  <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Vercel</span>
+                  <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">JavaScript</span>
+                  <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Online Payments</span>
                 </div>
               </div>
-              <span class="text-xs text-cyan-300/70 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
-            </div>
-            <p class="text-white/70 leading-relaxed mb-5 max-w-3xl">A complete job marketplace built from scratch — employer &amp; job-seeker dashboards, real-time messaging, AI-assisted job posting, secure online payments, and an approval-gated listing engine. Frontend, backend, database, and cloud functions all designed and shipped solo.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Firebase</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Cloud Functions</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Vercel</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">JavaScript</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Online Payments</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Full-Stack</span>
             </div>
           </a>
 
           <!-- Nica Portfolio (client work) -->
           <a href="https://portfolio-nica.vercel.app" target="_blank" rel="noopener noreferrer"
-             class="glass rounded-2xl p-8 card-hover fade-up block group">
-            <div class="flex items-start justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20 border border-cyan-400/30 flex items-center justify-center text-2xl">✨</div>
-              <span class="text-xs text-cyan-300/70 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
+             class="glass rounded-2xl card-hover fade-up block group overflow-hidden">
+            <div class="relative overflow-hidden">
+              <img src="assets/work/nica.png" alt="Nica Abelido portfolio site" loading="lazy" class="w-full h-44 object-cover object-top transition duration-500 group-hover:scale-105" />
+              <span class="absolute top-3 right-3 text-xs text-cyan-100 bg-black/50 backdrop-blur px-2 py-0.5 rounded-full tracking-widest uppercase">Live ↗</span>
             </div>
-            <h3 class="serif text-xl text-white mb-1 group-hover:text-cyan-200 transition">Nica Abelido — Portfolio</h3>
-            <p class="text-cyan-300/80 text-sm mb-3">Personal-Brand Site · Client Work</p>
-            <p class="text-white/65 text-sm leading-relaxed mb-4">A polished portfolio designed and shipped for a client — clean editorial layout, smooth scroll animations, and a conversion-focused hire flow.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">UI / UX</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Responsive</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Client Delivery</span>
+            <div class="p-6">
+              <h3 class="serif text-xl text-white mb-1 group-hover:text-cyan-200 transition">Nica Abelido — Portfolio</h3>
+              <p class="text-cyan-300 text-sm mb-3">Personal-Brand Site · Client Work</p>
+              <p class="text-white/70 text-sm leading-relaxed mb-4">A polished portfolio designed and shipped for a client — clean editorial layout, smooth scroll animations, and a conversion-focused hire flow.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">UI / UX</span>
+                <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Responsive</span>
+                <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Client Delivery</span>
+              </div>
             </div>
           </a>
 
           <!-- Mallows Club -->
           <a href="https://mallows-club.vercel.app" target="_blank" rel="noopener noreferrer"
-             class="glass rounded-2xl p-8 card-hover fade-up block group">
-            <div class="flex items-start justify-between mb-4">
-              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20 border border-cyan-400/30 flex items-center justify-center text-2xl">🛍️</div>
-              <span class="text-xs text-cyan-300/70 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
+             class="glass rounded-2xl card-hover fade-up block group overflow-hidden">
+            <div class="relative overflow-hidden">
+              <img src="assets/work/mallows.png" alt="Mallows Club streetwear storefront" loading="lazy" class="w-full h-44 object-cover object-top transition duration-500 group-hover:scale-105" />
+              <span class="absolute top-3 right-3 text-xs text-cyan-100 bg-black/50 backdrop-blur px-2 py-0.5 rounded-full tracking-widest uppercase">Live ↗</span>
             </div>
-            <h3 class="serif text-xl text-white mb-1 group-hover:text-cyan-200 transition">Mallows Club</h3>
-            <p class="text-cyan-300/80 text-sm mb-3">Streetwear Brand Storefront</p>
-            <p class="text-white/65 text-sm leading-relaxed mb-4">A bold, fashion-forward brand store with an editorial layout, striking typography, and a smooth, responsive product presentation.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">E-Commerce</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Branding</span>
-              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Responsive</span>
+            <div class="p-6">
+              <h3 class="serif text-xl text-white mb-1 group-hover:text-cyan-200 transition">Mallows Club</h3>
+              <p class="text-cyan-300 text-sm mb-3">Streetwear Brand Storefront</p>
+              <p class="text-white/70 text-sm leading-relaxed mb-4">A bold, fashion-forward brand store with an editorial layout, striking typography, and a smooth, responsive product presentation.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">E-Commerce</span>
+                <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Branding</span>
+                <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Responsive</span>
+              </div>
             </div>
           </a>
 
