@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lloyd Allen Clavo | Digital Playground</title>
   <meta name="description" content="Lloyd Allen Clavo – Digital Content Strategist, Process Analyst, Virtual Assistant & Elite OnlyFans Chatter" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E" />
+  <!-- Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lloyd Allen Clavo | Digital Playground" />
+  <meta property="og:description" content="Digital Content Strategist, Web Developer, Process Analyst & VA — turning complex operations and creator revenue into smooth, profitable systems." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lloyd Allen Clavo | Digital Playground" />
+  <meta name="twitter:description" content="Digital Content Strategist, Web Developer, Process Analyst & VA." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,7 +149,15 @@
       background: linear-gradient(var(--neon-pink), var(--neon-cyan));
       border-radius: 3px;
     }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .animate-bounce { animation: none !important; }
+    }
+    /* Mobile menu */
+    #mobileMenu a { padding: 0.5rem 0; }
   </style>
+  <noscript><style>.fade-up{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
   <div id="canvas-container"></div>
@@ -154,17 +171,36 @@
           <a href="#resume3d" class="nav-link hover:text-white">3D Resume</a>
           <a href="#experience" class="nav-link hover:text-white">Experience</a>
           <a href="#skills" class="nav-link hover:text-white">Skills</a>
+          <a href="#work" class="nav-link hover:text-white">Work</a>
           <a href="#education" class="nav-link hover:text-white">Education</a>
           <a href="#certifications" class="nav-link hover:text-white">Certifications</a>
           <a href="#contact" class="nav-link hover:text-white">Contact</a>
         </div>
-        <a href="mailto:gotmilk766@gmail.com" class="btn-neon px-5 py-2 rounded-full text-sm tracking-wider">Hire Me</a>
+        <div class="flex items-center gap-3">
+          <a href="mailto:gotmilk766@gmail.com" class="hidden sm:inline-block btn-neon px-5 py-2 rounded-full text-sm tracking-wider">Hire Me</a>
+          <button id="menuBtn" type="button" class="md:hidden p-2 -mr-2 text-white/80 hover:text-white transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+            <svg id="menuIcon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h18M4 13h18M4 19h18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden glass border-t border-white/5">
+        <div class="px-6 py-4 flex flex-col text-sm tracking-wide">
+          <a href="#about" class="nav-link hover:text-white">About</a>
+          <a href="#resume3d" class="nav-link hover:text-white">3D Resume</a>
+          <a href="#experience" class="nav-link hover:text-white">Experience</a>
+          <a href="#skills" class="nav-link hover:text-white">Skills</a>
+          <a href="#work" class="nav-link hover:text-white">Work</a>
+          <a href="#education" class="nav-link hover:text-white">Education</a>
+          <a href="#certifications" class="nav-link hover:text-white">Certifications</a>
+          <a href="#contact" class="nav-link hover:text-white">Contact</a>
+          <a href="mailto:gotmilk766@gmail.com" class="btn-neon mt-3 px-5 py-2 rounded-full text-sm tracking-wider text-center">Hire Me</a>
+        </div>
       </div>
     </nav>
 
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
       <div class="max-w-5xl mx-auto px-6 text-center">
-        <p class="text-sm tracking-[0.4em] uppercase text-cyan-300/80 mb-6 fade-up">Digital Content Strategist · Process Analyst · VA</p>
+        <p class="text-sm tracking-[0.4em] uppercase text-cyan-300/80 mb-6 fade-up">Digital Content Strategist · Web Developer · Process Analyst · VA</p>
         <h1 class="section-title neon-text mb-4 fade-up" style="transition-delay:0.1s">Peep My Digital<br>Playground</h1>
         <p class="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-10 fade-up" style="transition-delay:0.2s">
           Lloyd Allen Clavo — turning complex operations, high-volume chat, and creator revenue into smooth, profitable systems.
@@ -317,6 +353,98 @@
       </div>
     </section>
 
+    <!-- WEB DESIGN & BUILDS -->
+    <section id="work" class="py-24 md:py-32 bg-black/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="section-title neon-text text-center mb-4 fade-up">Web Design &amp; Builds</h2>
+        <p class="text-center text-white/50 mb-16 fade-up">Live projects I've designed, built, and shipped — click any card to open it</p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- Featured: Apply4Me -->
+          <a href="https://apply4me.vercel.app" target="_blank" rel="noopener noreferrer"
+             class="glass rounded-2xl p-8 card-hover fade-up block md:col-span-2 group">
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/25 to-pink-500/25 border border-cyan-400/30 flex items-center justify-center text-3xl">🧭</div>
+                <div>
+                  <h3 class="serif text-2xl text-white group-hover:text-cyan-200 transition">Apply4Me <span class="text-xs align-middle ml-2 px-2 py-0.5 rounded-full bg-pink-500/15 text-pink-300 tracking-widest uppercase">Featured</span></h3>
+                  <p class="text-cyan-300/80 text-sm tracking-wide">Full-Stack Job Marketplace · Designed &amp; Built End-to-End</p>
+                </div>
+              </div>
+              <span class="text-xs text-cyan-300/70 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
+            </div>
+            <p class="text-white/70 leading-relaxed mb-5 max-w-3xl">A complete job marketplace built from scratch — employer &amp; job-seeker dashboards, real-time messaging, AI-assisted job posting, secure online payments, and an approval-gated listing engine. Frontend, backend, database, and cloud functions all designed and shipped solo.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Firebase</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Cloud Functions</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Vercel</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">JavaScript</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Online Payments</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Full-Stack</span>
+            </div>
+          </a>
+
+          <!-- Nica Portfolio (client work) -->
+          <a href="https://portfolio-nica.vercel.app" target="_blank" rel="noopener noreferrer"
+             class="glass rounded-2xl p-8 card-hover fade-up block group">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20 border border-cyan-400/30 flex items-center justify-center text-2xl">✨</div>
+              <span class="text-xs text-cyan-300/70 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
+            </div>
+            <h3 class="serif text-xl text-white mb-1 group-hover:text-cyan-200 transition">Nica Abelido — Portfolio</h3>
+            <p class="text-cyan-300/80 text-sm mb-3">Personal-Brand Site · Client Work</p>
+            <p class="text-white/65 text-sm leading-relaxed mb-4">A polished portfolio designed and shipped for a client — clean editorial layout, smooth scroll animations, and a conversion-focused hire flow.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">UI / UX</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Responsive</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Client Delivery</span>
+            </div>
+          </a>
+
+          <!-- Mallows Club -->
+          <a href="https://mallows-club.vercel.app" target="_blank" rel="noopener noreferrer"
+             class="glass rounded-2xl p-8 card-hover fade-up block group">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20 border border-cyan-400/30 flex items-center justify-center text-2xl">🛍️</div>
+              <span class="text-xs text-cyan-300/70 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
+            </div>
+            <h3 class="serif text-xl text-white mb-1 group-hover:text-cyan-200 transition">Mallows Club</h3>
+            <p class="text-cyan-300/80 text-sm mb-3">Streetwear Brand Storefront</p>
+            <p class="text-white/65 text-sm leading-relaxed mb-4">A bold, fashion-forward brand store with an editorial layout, striking typography, and a smooth, responsive product presentation.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">E-Commerce</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Branding</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Responsive</span>
+            </div>
+          </a>
+
+          <!-- 3D Calculator -->
+          <a href="https://3-d-calculator-ochre.vercel.app" target="_blank" rel="noopener noreferrer"
+             class="glass rounded-2xl p-8 card-hover fade-up block group md:col-span-2">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20 border border-cyan-400/30 flex items-center justify-center text-2xl">🧮</div>
+              <span class="text-xs text-cyan-300/70 tracking-widest uppercase whitespace-nowrap">Live ↗</span>
+            </div>
+            <h3 class="serif text-xl text-white mb-1 group-hover:text-cyan-200 transition">Multi-User 3D Calculator</h3>
+            <p class="text-cyan-300/80 text-sm mb-3">Interactive WebGL App · Kowalzki Studio</p>
+            <p class="text-white/65 text-sm leading-relaxed mb-4">A playful, technically ambitious multi-user 3D calculator built with Three.js — real-time interaction rendered in the browser with WebGL.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Three.js</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">WebGL</span>
+              <span class="skill-pill px-3 py-1 rounded-full text-xs tracking-wide">Real-Time</span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="text-center mt-12 fade-up">
+          <a href="https://github.com/gotmilk766-gif" target="_blank" rel="noopener noreferrer"
+             class="btn-neon inline-block px-8 py-3 rounded-full text-sm tracking-widest uppercase">See more on GitHub →</a>
+        </div>
+      </div>
+    </section>
+
     <section id="education" class="py-24 md:py-32">
       <div class="max-w-4xl mx-auto px-6">
         <h2 class="section-title neon-text text-center mb-16 fade-up">My Academic Credentials</h2>
@@ -386,16 +514,71 @@
     </section>
 
     <section id="contact" class="py-24 md:py-32">
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2 class="section-title neon-text mb-6 fade-up">Let’s Build Something</h2>
-        <p class="text-white/60 mb-10 fade-up">Available for virtual assistant, process improvement, community management, and high-performance chatting roles.</p>
-        <div class="glass rounded-2xl p-8 md:p-10 fade-up">
-          <div class="space-y-4 text-left max-w-md mx-auto">
-            <div class="flex items-center gap-4"><span class="text-cyan-400">✉</span><a href="mailto:gotmilk766@gmail.com" class="hover:text-cyan-300 transition">gotmilk766@gmail.com</a></div>
-            <div class="flex items-center gap-4"><span class="text-cyan-400">📱</span><span>0966 798 0880</span></div>
-            <div class="flex items-center gap-4"><span class="text-cyan-400">📍</span><span>Taguig / Makati City, Philippines</span></div>
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="section-title neon-text mb-4 fade-up">Let’s Build Something</h2>
+          <p class="text-white/60 max-w-2xl mx-auto fade-up">Available for virtual assistant, process improvement, community management, web builds, and high-performance chatting roles. Drop a message and I’ll get back within 24 hours.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 items-stretch">
+
+          <!-- Form -->
+          <div class="glass rounded-2xl p-8 md:p-10 fade-up">
+            <form id="contactForm" novalidate>
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <input type="text" id="cfName" name="name" required autocomplete="name" placeholder="Your Name"
+                  class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/60 transition" />
+                <input type="email" id="cfEmail" name="email" required autocomplete="email" placeholder="Your Email"
+                  class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/60 transition" />
+              </div>
+              <textarea id="cfMsg" name="message" required rows="5" placeholder="Tell me about your project or role"
+                class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/60 transition resize-y mb-2"></textarea>
+              <p id="cfStatus" class="text-xs text-cyan-300/80 min-h-[1.1em] mb-4" role="status" aria-live="polite"></p>
+              <button type="submit" class="btn-neon w-full sm:w-auto px-10 py-3 rounded-full text-sm tracking-widest uppercase">Send Message →</button>
+            </form>
           </div>
-          <a href="mailto:gotmilk766@gmail.com" class="btn-neon inline-block mt-10 px-10 py-3 rounded-full text-sm tracking-widest uppercase">Get in Touch</a>
+
+          <!-- Details -->
+          <div class="glass rounded-2xl p-8 md:p-10 fade-up" style="transition-delay:0.1s">
+            <h3 class="serif text-sm tracking-[0.3em] uppercase text-cyan-300/80 mb-8">Contact Details</h3>
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <span class="text-cyan-400 text-lg">✉</span>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-white/40">Email</div>
+                  <a href="mailto:gotmilk766@gmail.com" class="hover:text-cyan-300 transition">gotmilk766@gmail.com</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-cyan-400 text-lg">📱</span>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-white/40">Phone</div>
+                  <a href="tel:+639667980880" class="hover:text-cyan-300 transition">0966 798 0880</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-cyan-400 text-lg">📍</span>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-white/40">Location</div>
+                  <span>Taguig / Makati City, Philippines</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-cyan-400 text-lg">⏱</span>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-white/40">Response Time</div>
+                  <span>Within 24 hours</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-cyan-400 text-lg">⌥</span>
+                <div>
+                  <div class="text-xs uppercase tracking-wider text-white/40">GitHub</div>
+                  <a href="https://github.com/gotmilk766-gif" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-300 transition">github.com/gotmilk766-gif</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -463,6 +646,47 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // MOBILE MENU
+    (function () {
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      if (!btn || !menu) return;
+      const hamburger = '<path d="M4 7h18M4 13h18M4 19h18"/>';
+      const close = '<path d="M6 6l14 14M20 6L6 20"/>';
+      const setOpen = (open) => {
+        menu.classList.toggle('hidden', !open);
+        btn.setAttribute('aria-expanded', String(open));
+        icon.innerHTML = open ? close : hamburger;
+      };
+      btn.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    })();
+
+    // CONTACT FORM (no backend — builds a pre-filled email)
+    (function () {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      const status = document.getElementById('cfStatus');
+      const nameEl = document.getElementById('cfName');
+      const emailEl = document.getElementById('cfEmail');
+      const msgEl = document.getElementById('cfMsg');
+      const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = nameEl.value.trim();
+        const email = emailEl.value.trim();
+        const msg = msgEl.value.trim();
+        if (!name || !email || !msg) { status.style.color = '#ff2d95'; status.textContent = 'Please fill in your name, email, and message.'; return; }
+        if (!emailOk(email)) { status.style.color = '#ff2d95'; status.textContent = 'That email address looks off — please check it.'; return; }
+        const subject = 'Portfolio inquiry from ' + name;
+        const body = msg + '\n\n— ' + name + '\n' + email;
+        status.style.color = 'rgba(0,240,255,0.85)';
+        status.textContent = 'Opening your email app…';
+        window.location.href = 'mailto:gotmilk766@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    })();
 
     // CLEAN 3D RESUME (NO POST-PROCESSING)
     (function() {
