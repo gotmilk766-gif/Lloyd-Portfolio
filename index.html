@@ -42,7 +42,11 @@
     h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
     #canvas-container {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      z-index: 0; pointer-events: none;
+      z-index: 0; pointer-events: none; opacity: 0.7;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--neon-cyan);
+      outline-offset: 3px; border-radius: 6px;
     }
     .content { position: relative; z-index: 10; }
     .glass {
@@ -61,6 +65,7 @@
       font-size: clamp(2rem, 5vw, 3.5rem);
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      color: #f2f3f7;
     }
     .fade-up {
       opacity: 0; transform: translateY(40px);
@@ -240,7 +245,7 @@
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div class="fade-up">
             <p class="text-cyan-300 tracking-widest text-sm uppercase mb-3">About Lloyd Allen Clavo</p>
-            <h2 class="section-title neon-text mb-6">One operator, four modes.</h2>
+            <h2 class="section-title mb-6">One operator, four modes.</h2>
             <div class="space-y-5 text-white/85 leading-relaxed">
               <p>I'm a multi-disciplinary digital operator with 8+ years spanning BPO, banking, operations, community management, and web development. I move fluidly between four modes — <span class="text-white">building software, running operations, driving chat &amp; sales, and designing for 3D print</span>.</p>
               <p>Whether it's a full-stack app, a cleaned-up workflow, a high-converting chat funnel, or a print-ready model — I turn ideas into things that actually ship. Precise, adaptable, and easy to work with.</p>
@@ -273,7 +278,7 @@
     <section id="experience" class="py-24 md:py-32">
       <div class="max-w-6xl mx-auto px-6">
         <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">Experience</p>
-        <h2 class="section-title neon-text text-center mb-4 fade-up">The track record.</h2>
+        <h2 class="section-title text-center mb-4 fade-up">The track record.</h2>
         <p class="text-center text-white/70 mb-16 fade-up">8+ years across operations, support, growth &amp; development</p>
         <div class="space-y-8">
           <div class="glass rounded-2xl p-8 card-hover fade-up">
@@ -339,7 +344,7 @@
     <section id="skills" class="py-24 md:py-32 bg-black/40">
       <div class="max-w-6xl mx-auto px-6">
         <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">What I Do</p>
-        <h2 class="section-title neon-text text-center mb-4 fade-up">Four modes, one operator.</h2>
+        <h2 class="section-title text-center mb-4 fade-up">Four modes, one operator.</h2>
         <p class="text-center text-white/70 mb-16 fade-up max-w-2xl mx-auto">Pick the lane you need — each one links straight to the proof.</p>
         <div class="grid sm:grid-cols-2 gap-6 mb-14">
           <a href="#work" class="glass rounded-2xl p-8 card-hover fade-up block group">
@@ -385,7 +390,7 @@
     <section id="work" class="py-24 md:py-32 bg-black/50">
       <div class="max-w-6xl mx-auto px-6">
         <p class="text-center text-cyan-300 tracking-widest text-sm uppercase mb-3 fade-up">Dev &amp; Automation</p>
-        <h2 class="section-title neon-text text-center mb-4 fade-up">Things I've shipped.</h2>
+        <h2 class="section-title text-center mb-4 fade-up">Things I've shipped.</h2>
         <p class="text-center text-white/70 mb-16 fade-up">Live projects I've designed, built, and deployed — click any card to open it</p>
 
         <div class="grid md:grid-cols-2 gap-6">
@@ -485,7 +490,7 @@
     <!-- 3D LAB -->
     <section id="lab" class="py-24 md:py-32 bg-black/40">
       <div class="max-w-6xl mx-auto px-6">
-        <h2 class="section-title neon-text text-center mb-4 fade-up">3D Lab</h2>
+        <h2 class="section-title text-center mb-4 fade-up">3D Lab</h2>
         <p class="text-center text-white/70 mb-12 fade-up">Modeling, sculpting &amp; print design — drag the model to explore</p>
 
         <div class="grid md:grid-cols-2 gap-6 items-stretch mb-16">
@@ -524,7 +529,7 @@
 
     <section id="education" class="py-24 md:py-32">
       <div class="max-w-4xl mx-auto px-6">
-        <h2 class="section-title neon-text text-center mb-16 fade-up">My Academic Credentials</h2>
+        <h2 class="section-title text-center mb-16 fade-up">My Academic Credentials</h2>
         <div class="space-y-6">
           <div class="glass rounded-xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 card-hover fade-up">
             <div><h3 class="serif text-lg text-white">Bachelor of Arts in Political Science</h3><p class="text-cyan-300/80 text-sm">University of Makati</p></div>
@@ -541,7 +546,7 @@
     <!-- CERTIFICATIONS -->
     <section id="certifications" class="py-24 md:py-32 bg-black/40">
       <div class="max-w-4xl mx-auto px-6">
-        <h2 class="section-title neon-text text-center mb-4 fade-up">Certifications</h2>
+        <h2 class="section-title text-center mb-4 fade-up">Certifications</h2>
         <p class="text-center text-white/70 mb-12 fade-up">Verified credentials</p>
 
         <div class="glass rounded-2xl p-8 md:p-10 card-hover fade-up">
@@ -593,7 +598,7 @@
     <section id="contact" class="py-24 md:py-32">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12">
-          <h2 class="section-title neon-text mb-4 fade-up">Let’s Build Something</h2>
+          <h2 class="section-title mb-4 fade-up">Let’s Build Something</h2>
           <p class="text-white/60 max-w-2xl mx-auto fade-up">Available for virtual assistant, process improvement, community management, web builds, and high-performance chatting roles. Drop a message and I’ll get back within 24 hours.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-6 items-stretch">
@@ -696,7 +701,7 @@
     bgRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     bgContainer.appendChild(bgRenderer.domElement);
 
-    const particleCount = 700;
+    const particleCount = 380;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const c1 = new THREE.Color(0xff2d95), c2 = new THREE.Color(0x00f0ff), c3 = new THREE.Color(0xb14eff);
@@ -710,13 +715,13 @@
     const pGeo = new THREE.BufferGeometry();
     pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     pGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-    const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({ size: 0.14, vertexColors: true, transparent: true, opacity: 0.65, sizeAttenuation: true }));
+    const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({ size: 0.12, vertexColors: true, transparent: true, opacity: 0.42, sizeAttenuation: true }));
     bgScene.add(particles);
 
     const ringGeo = new THREE.TorusGeometry(8, 0.07, 16, 100);
-    const ring1 = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.22 }));
+    const ring1 = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.12 }));
     ring1.rotation.x = Math.PI / 2.5; bgScene.add(ring1);
-    const ring2 = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({ color: 0xff2d95, transparent: true, opacity: 0.18 }));
+    const ring2 = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({ color: 0xff2d95, transparent: true, opacity: 0.1 }));
     ring2.rotation.x = Math.PI / 3; ring2.rotation.y = 0.4; ring2.scale.setScalar(1.3); bgScene.add(ring2);
 
     let mx = 0, my = 0;
